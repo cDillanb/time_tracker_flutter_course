@@ -1,23 +1,26 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tracker_flutter_course/app/sign_in/sign_in_button.dart';
-import 'package:time_tracker_flutter_course/common_widgets/custom_elevated_button.dart';
 import 'package:time_tracker_flutter_course/app/sign_in/social_sign_in_button.dart';
 import 'package:time_tracker_flutter_course/services/auth.dart';
 
 class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key,@required required this.auth ,required this.onSignIn}) : super(key: key);
+  const SignInPage({Key? key, @required required this.auth}) : super(key: key);
   final AuthBase auth;
-  final void Function(User?) onSignIn;
 
   Future<void> _signInAnonymously() async {
     try {
-      final user = await auth.signInAnonymously();
-      onSignIn(user);
+      await auth.signInAnonymously();
     } catch (e) {
       print(e.toString());
     }
+  }
 
+  Future<void> _signInWithGoogle() async {
+    try {
+      await auth.signInWithGoogle();
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   @override
@@ -51,7 +54,7 @@ class SignInPage extends StatelessWidget {
           SocialSignInButton(
             text: 'Sign in with Google',
             assetName: 'images/google-logo.png',
-            onPressed: () {},
+            onPressed: _signInWithGoogle,
           ),
           SizedBox(height: 8.0),
           SocialSignInButton(
@@ -84,9 +87,5 @@ class SignInPage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void _signInWithGoogle() {
-    // TODO: Auth with Google
   }
 }
