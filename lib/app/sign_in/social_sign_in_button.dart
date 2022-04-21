@@ -7,7 +7,7 @@ class SocialSignInButton extends CustomElevatedButton {
     required String text,
     Color color = Colors.white,
     Color textColor = Colors.black,
-    required VoidCallback onPressed,
+    required VoidCallback? onPressed,
   }) : super(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

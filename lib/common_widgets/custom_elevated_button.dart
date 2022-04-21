@@ -4,7 +4,7 @@ class CustomElevatedButton extends StatelessWidget {
   CustomElevatedButton(
       {required this.child,
       required this.onPressed,
-      this.color: Colors.white,
+      required this.color,
       this.height: 50.0});
   final Widget child;
   final VoidCallback? onPressed;
@@ -20,6 +20,7 @@ class CustomElevatedButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: color,
           minimumSize: Size.fromHeight(40),
+          onSurface: color,
         ),
         onPressed: onPressed,
       ),
