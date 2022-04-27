@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_form_stateful.dart';
 import 'package:time_tracker_flutter_course/app/sign_in/email_sign_in_model.dart';
-
 import '../../services/auth.dart';
 
 class EmailSignInBloc {
