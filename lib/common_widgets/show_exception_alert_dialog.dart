@@ -10,13 +10,13 @@ Future<void> showExceptionAlertDialog(
     showAlertDialog(
       context,
       title: title,
-      content: exception.toString(),
+      content: _message(exception),
       defaultActionText: 'OK',
     );
 
 String? _message(Exception exception) {
   if (exception is FirebaseException) {
-    return exception.message;
+    return exception.message.toString();
   }
   return exception.toString();
 }
