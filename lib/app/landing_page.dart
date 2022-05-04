@@ -4,7 +4,7 @@ import '../services/auth.dart';
 import '../services/database.dart';
 import 'sign_in/sign_in_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'home/jobs_page.dart';
+import 'home/jobs/jobs_page.dart';
 
 class LandingPage extends StatelessWidget {
   @override
