@@ -62,11 +62,9 @@ class EmailSignInChangeModel with EmailAndPasswordValidators, ChangeNotifier {
   }
 
   void toggleFormType() {
-    final EmailSignInFormType? formType =
-        this.formType == EmailSignInFormType.signIn
-            ? EmailSignInFormType.register
-            : EmailSignInFormType.signIn;
-
+    final formType = this.formType == EmailSignInFormType.signIn
+        ? EmailSignInFormType.register
+        : EmailSignInFormType.signIn;
     updateWith(
       email: '',
       password: '',

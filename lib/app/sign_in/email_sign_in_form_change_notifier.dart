@@ -38,11 +38,11 @@ class _EmailSignInFormChangeNotifierState
 
   @override
   void dispose() {
-    super.dispose;
     _emailController.dispose();
     _passwordController.dispose();
     _emailFocusNode.dispose();
     _passwordFocusNode.dispose();
+    super.dispose();
   }
 
   Future<void> _submit() async {
@@ -83,7 +83,7 @@ class _EmailSignInFormChangeNotifierState
       ),
       SizedBox(height: 8.0),
       TextButton(
-        onPressed: !model.isLoading ? () => _toggleFormType : null,
+        onPressed: !model.isLoading ? _toggleFormType : null,
         child: Text(model.secondaryButtonText),
       )
     ];
